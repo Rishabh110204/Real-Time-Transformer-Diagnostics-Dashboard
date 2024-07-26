@@ -1,0 +1,66 @@
+/* Temp.css */
+
+.temperature-chart-wrapper {
+  width: 100%;
+  max-width: 1200px; /* Set a max width to prevent excessive stretching on large screens */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: "mode"; /* Dark background color */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping to the next line if necessary */
+  gap: 20px;
+}
+
+.chart-container {
+  flex: 1 1 calc(50% - 20px); /* Make each container take up approximately 50% of the width, minus the gap */
+  max-width: calc(50% - 20px); /* Ensure containers do not exceed 50% of the parent width */
+  min-width: 300px; /* Minimum width to maintain readability */
+  height: 200px; /* Fixed height for each chart container */
+  padding: 20px;
+  position: relative;
+  background-color: "colors.primary[800]"; /* Dark container background */
+  border-radius: 8px;
+  outline: auto;
+  color: "mode"; /* White text color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: height 0.3s ease;
+}
+
+.chart-container:hover {
+  height: 400px; /* Height of the chart on hover */
+}
+
+.chart-container h4 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: "mode";
+}
+
+.chart-container .summary {
+  font-size: 2rem;
+  font-weight: bold;
+  color: "mode";
+}
+
+.chart-container .summary-sub {
+  font-size: 1rem;
+  color: "mode"; /* Light gray text for subtext */
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+  .chart-container {
+    flex: 1 1 100%; /* Make each container take up the full width on small screens */
+    max-width: 100%; /* Ensure containers do not exceed the full width on small screens */
+  }
+}
